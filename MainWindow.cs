@@ -13,4 +13,10 @@ public partial class MainWindow: Gtk.Window
 		Application.Quit ();
 		a.RetVal = true;
 	}
+
+	protected void FileQuit_Activated (object sender, System.EventArgs e)
+	{
+		//throw new System.NotImplementedException ();
+		Application.Quit ();
+	}
 }
