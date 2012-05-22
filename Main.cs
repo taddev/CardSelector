@@ -1,3 +1,9 @@
+/**
+ * Author: Tad DeVries
+ * Email: tad@splunk.net
+ * Date: 05/22/2012
+ **/
+
 using System;
 using Gtk;
 using System.Xml;
