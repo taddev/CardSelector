@@ -16,7 +16,6 @@ public partial class MainWindow: Gtk.Window
 
 	protected void FileQuit_Activated (object sender, System.EventArgs e)
 	{
-		//throw new System.NotImplementedException ();
 		Application.Quit ();
 	}
 }

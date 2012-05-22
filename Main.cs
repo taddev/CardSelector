@@ -1,5 +1,7 @@
 using System;
 using Gtk;
+using System.Xml;
+
 
 namespace CardSelector
 {
