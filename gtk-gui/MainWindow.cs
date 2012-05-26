@@ -8,6 +8,10 @@ public partial class MainWindow
 	private global::Gtk.Action QuitAction;
 	private global::Gtk.VBox vbox1;
 	private global::Gtk.MenuBar menubar1;
+	private global::Gtk.HPaned hpaned1;
+	private global::Gtk.Fixed fixed2;
+	private global::Gtk.ComboBox combobox1;
+	private global::Gtk.Statusbar statusbar1;
 	
 	protected virtual void Build ()
 	{
@@ -15,10 +19,20 @@ public partial class MainWindow
 		// Widget MainWindow
 		this.UIManager = new global::Gtk.UIManager ();
 		global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
-		this.FileAction = new global::Gtk.Action ("FileAction", global::Mono.Unix.Catalog.GetString ("File"), null, null);
+		this.FileAction = new global::Gtk.Action (
+			"FileAction",
+			global::Mono.Unix.Catalog.GetString("File"),
+			null,
+			null
+		);
 		this.FileAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("File");
 		w1.Add (this.FileAction, null);
-		this.QuitAction = new global::Gtk.Action ("QuitAction", global::Mono.Unix.Catalog.GetString ("Quit"), null, null);
+		this.QuitAction = new global::Gtk.Action (
+			"QuitAction",
+			global::Mono.Unix.Catalog.GetString("Quit"),
+			null,
+			null
+		);
 		this.QuitAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Quit");
 		w1.Add (this.QuitAction, null);
 		this.UIManager.InsertActionGroup (w1, 0);
@@ -32,7 +46,8 @@ public partial class MainWindow
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
 		this.UIManager.AddUiFromString ("<ui><menubar name=\'menubar1\'><menu name=\'FileAction\' action=\'FileAction\'><menuite" +
-				"m name=\'QuitAction\' action=\'QuitAction\'/></menu></menubar></ui>");
+			"m name=\'QuitAction\' action=\'QuitAction\'/></menu></menubar></ui>"
+		);
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox1.Add (this.menubar1);
@@ -40,6 +55,39 @@ public partial class MainWindow
 		w2.Position = 0;
 		w2.Expand = false;
 		w2.Fill = false;
+		// Container child vbox1.Gtk.Box+BoxChild
+		this.hpaned1 = new global::Gtk.HPaned ();
+		this.hpaned1.CanFocus = true;
+		this.hpaned1.Name = "hpaned1";
+		// Container child hpaned1.Gtk.Paned+PanedChild
+		this.fixed2 = new global::Gtk.Fixed ();
+		this.fixed2.Name = "fixed2";
+		this.fixed2.HasWindow = false;
+		// Container child fixed2.Gtk.Fixed+FixedChild
+		this.combobox1 = global::Gtk.ComboBox.NewText ();
+		this.combobox1.AppendText (global::Mono.Unix.Catalog.GetString ("Item 1"));
+		this.combobox1.AppendText (global::Mono.Unix.Catalog.GetString ("Item 2"));
+		this.combobox1.AppendText (global::Mono.Unix.Catalog.GetString ("Item 3"));
+		this.combobox1.AppendText (global::Mono.Unix.Catalog.GetString ("Item 4"));
+		this.combobox1.Name = "combobox1";
+		this.combobox1.Active = 0;
+		this.fixed2.Add (this.combobox1);
+		global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed2 [this.combobox1]));
+		w3.X = 46;
+		w3.Y = 37;
+		this.hpaned1.Add (this.fixed2);
+		this.vbox1.Add (this.hpaned1);
+		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hpaned1]));
+		w5.Position = 1;
+		// Container child vbox1.Gtk.Box+BoxChild
+		this.statusbar1 = new global::Gtk.Statusbar ();
+		this.statusbar1.Name = "statusbar1";
+		this.statusbar1.Spacing = 6;
+		this.vbox1.Add (this.statusbar1);
+		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.statusbar1]));
+		w6.Position = 2;
+		w6.Expand = false;
+		w6.Fill = false;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
